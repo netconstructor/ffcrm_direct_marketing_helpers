@@ -4,6 +4,7 @@ module FfcrmDirectMarketingHelpers
       Lead.class_eval do
         before_validation(:on => :create) do
           self.original_contact = self.full_name
+          self.original_contact_job ||= self.job
         end
       end
     end
